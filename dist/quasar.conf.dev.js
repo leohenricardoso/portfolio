@@ -36,7 +36,7 @@ module.exports = function ()
     ],
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      vueRouterMode: 'hash',
+      vueRouterMode: 'history',
       // available values: 'hash', 'history'
       publicPath: 'https://leohenrique.me/',
       // Add dependencies for transpiling with Babel (Array of regexes)
@@ -101,8 +101,8 @@ module.exports = function ()
       workboxOptions: {},
       // only for GenerateSW
       manifest: {
-        name: 'Leonardo Henrique Portfolio',
-        short_name: 'Leonardo Henrique Portfolio',
+        name: 'Leonardo Henrique',
+        short_name: 'Leonardo Henrique',
         description: 'Portfolio - Leonardo Henrique',
         display: 'standalone',
         orientation: 'portrait',

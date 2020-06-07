@@ -1,4 +1,4 @@
-# Leonardo Henrique Portfolio (portfolio)
+# Leonardo Henrique (portfolio)
 
 Portfolio - Leonardo Henrique
 
