@@ -23,7 +23,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.html.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.html.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.html.expanded = !skill.html.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -33,8 +39,8 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
               round
+              class="custom-hover"
               flat
               dense
               :icon="skill.html.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
@@ -58,7 +64,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.css.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.css.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.css.expanded = !skill.css.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -68,9 +80,9 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
               round
               flat
+              class="custom-hover"
               dense
               :icon="skill.css.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
               @click="skill.css.expanded = !skill.css.expanded"
@@ -93,7 +105,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.vue.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.vue.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.vue.expanded = !skill.vue.expanded"
+              />
+              </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -103,7 +121,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -128,7 +146,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.node.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.node.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.node.expanded = !skill.node.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -138,7 +162,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -163,7 +187,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.javascript.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.javascript.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.javascript.expanded = !skill.javascript.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -173,7 +203,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -198,7 +228,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.php.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.php.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.php.expanded = !skill.php.expanded"
+                />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -208,7 +244,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -233,7 +269,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.mysql.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.mysql.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.mysql.expanded = !skill.mysql.expanded"
+              />
+              </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -243,7 +285,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -268,7 +310,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.postgres.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.postgres.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.postgres.expanded = !skill.postgres.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -278,7 +326,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -303,7 +351,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.rest.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.rest.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.rest.expanded = !skill.rest.expanded"
+              />
+              </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -313,7 +367,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -338,7 +392,13 @@
       <div class="col-12 col-md-2">
         <q-card flat bordered class="my-card text-center">
           <q-card-section>
-            <div class="text-h1"> <q-icon :name="skill.graphql.icon" /></div>
+            <div class="text-h1">
+              <q-icon
+                :name="skill.graphql.icon"
+                class="custom-hover cursor-pointer"
+                @click="skill.graphql.expanded = !skill.graphql.expanded"
+              />
+            </div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
@@ -348,7 +408,7 @@
           <q-card-actions>
             <q-space />
             <q-btn
-              color="grey"
+              class="custom-hover"
               round
               flat
               dense
@@ -389,7 +449,7 @@
         <div class="row justify-center items-center">
           <div class="col-12">
             <div class="text-h4 text-weight-medium">
-              <q-icon name="fas fa-briefcase" /> Experiência Profissional
+              <q-icon name="fas fa-briefcase" color="primary"/> Experiência Profissional
             </div>
           </div>
         </div>
@@ -408,9 +468,12 @@
               <div class="text-subtitle2 text-weight-medium">Bis2bis E-commerce (Nov/2019 - Atual)</div>
               <q-separator></q-separator>
               <div class="text-body1 q-mt-md">
-                 For each ad campaign that you create, you can control how much you're willing to
-                spend on clicks and conversions, which networks and geographical locations you want
-                your ads to show on, and more.
+                Responsável pelo desenvolvimento de módulos back-end e/ou focados no painel administrativo do Magento 2.
+                Em nosso time de desenvolvimento de módulos para Magento 2, utilizamos metodologia Ágil (Scrum).
+              </div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                <b>Tecnologias: </b> PHP, HTML, JavaScript, XML, Magento 2
               </div>
               <q-stepper-navigation>
                 <q-btn @click="step = 2" color="primary" label="Experiência anterior" />
@@ -425,13 +488,19 @@
               <div class="text-subtitle2 text-weight-medium">Projetos Freelancer (Jan/2020 - Atual)</div>
               <q-separator></q-separator>
               <div class="text-body1 q-mt-md">
-                 For each ad campaign that you create, you can control how much you're willing to
-                spend on clicks and conversions, which networks and geographical locations you want
-                your ads to show on, and more.
+                Responsável pelo desenvolvimento sites e sistemas Web de diferentes tipos e finalidades com o foco
+                no desempenho e na experiência do usuário. Desenvolvimento escalável com a utilização de APIs para
+                integrações e utilização de padrões de projetos conhecidos, como o MVC.
+                Grande parte dos projetos foram desenvolvidos utilizando frameworks atuais de
+                JavaScript: Vue.js (front-end) e Node.js (back-end).
+              </div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                <b>Tecnologias: </b> Vue.js, Node.js, Quasar.js, Adonis.js, MySQL, PostgreSQL, Rest API
               </div>
               <q-stepper-navigation>
-                <q-btn @click="step = 3" color="primary" label="Experiência posterior" />
-                <q-btn flat @click="step = 1" color="primary" label="Experiência anterior" class="q-ml-sm" />
+                <q-btn @click="step = 3" color="primary" label="Experiência anterior" />
+                <q-btn flat @click="step = 1" color="primary" label="Experiência posterior" class="q-ml-sm" />
               </q-stepper-navigation>
             </q-step>
 
@@ -440,32 +509,62 @@
               title="Desenvolvedor Full Stack"
               :done="step > 3"
             >
-              <div class="text-subtitle2 text-weight-medium">Instituto de Desenvolvimento de Londrina - CODEL (Nov/2018 - Nov/2019)</div>
+              <div class="text-subtitle2 text-weight-medium">Veronline - Tecnologia em Wifi (Fev/2019 - Nov/2019)</div>
               <q-separator></q-separator>
               <div class="text-body1 q-mt-md">
-                 For each ad campaign that you create, you can control how much you're willing to
-                spend on clicks and conversions, which networks and geographical locations you want
-                your ads to show on, and more.
+                Responsável pela manutenção e implementação de novas ferramentas em sistemas Web internos,
+                auxílio no desenvolvimento de softwares para roteadores móveis da mikrotik e
+                configuração de roteadores móveis.
+              </div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP, RouterOS Script (Mikrotik)
               </div>
               <q-stepper-navigation>
-                <q-btn @click="step = 4" color="primary" label="Experiência posterior" />
-                <q-btn flat @click="step = 2" color="primary" label="Experiência anterior" class="q-ml-sm" />
+                <q-btn @click="step = 4" color="primary" label="Experiência anterior" />
+                <q-btn flat @click="step = 2" color="primary" label="Experiência posterior" class="q-ml-sm" />
               </q-stepper-navigation>
             </q-step>
 
             <q-step
               :name="4"
+              title="Desenvolvedor Full Stack"
+              :done="step > 4"
+            >
+              <div class="text-subtitle2 text-weight-medium">Instituto de Desenvolvimento de Londrina - CODEL (Nov/2018 - Out/2019)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                Projeto remoto para o Instituto de Desenvolvimento de Londrina - CODEL, no
+                qual fui responsável pela elaboração e desenvolvimento do sistema Web Calendário Londrina.
+                Esse sistema tem por objetivo centralizar as informações de eventos que ocorrem na
+                cidade de Londrina, podendo atrair investidores na área de turismo, divulgação de
+                eventos e possibilitando a solicitação de auxílio no planejamento de um evento para a cidade.
+              </div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                <b>Tecnologias: </b> HTML, CSS, JavaScript, Bootstrap 4, PHP, MySQL
+              </div>
+              <q-stepper-navigation>
+                <q-btn @click="step = 5" color="primary" label="Experiência anterior" />
+                <q-btn flat @click="step = 3" color="primary" label="Experiência posterior" class="q-ml-sm" />
+              </q-stepper-navigation>
+            </q-step>
+
+            <q-step
+              :name="5"
               title="Estagiário de Desenvolvimento Web"
             >
               <div class="text-subtitle2 text-weight-medium">UP-ONE Soluções Inteligentes (Jun/2018 - Nov/2018)</div>
               <q-separator></q-separator>
               <div class="text-body1 q-mt-md">
-                 For each ad campaign that you create, you can control how much you're willing to
-                spend on clicks and conversions, which networks and geographical locations you want
-                your ads to show on, and more.
+                Responsável pelo desenvolvimento Web de sites institucionais, desenvolvimento de temas e configuração de sites Wordpress.
+              </div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP
               </div>
               <q-stepper-navigation>
-                <q-btn @click="step = 3" color="primary" label="Experiência anterior" class="q-ml-sm" />
+                <q-btn @click="step = 4" color="primary" label="Experiência posterior" class="q-ml-sm" />
               </q-stepper-navigation>
             </q-step>
           </q-stepper>
@@ -498,7 +597,7 @@
 
           <q-card-section class="q-pt-none">
             <a href="mailto:contato@leohenrique.me" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="E-mail" class="q-px-xl" />
+              <q-btn outline rounded label="E-mail" class="q-px-xl custom-hover" />
             </a>
           </q-card-section>
         </q-card>
@@ -517,7 +616,7 @@
 
           <q-card-section class="q-pt-none">
             <a href="https://www.linkedin.com/in/leonardo-henrique-972837162" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="Acessar" class="q-px-xl" />
+              <q-btn outline rounded label="Acessar" class="q-px-xl custom-hover" />
             </a>
           </q-card-section>
         </q-card>
@@ -535,8 +634,8 @@
           </q-card-section>
 
           <q-card-section class="q-pt-none">
-            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5543991821340" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="WhatsApp" class="q-px-xl" />
+            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5543991821340" target="_blank"  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+              <q-btn outline rounded label="WhatsApp" class="q-px-xl custom-hover" />
             </a>
           </q-card-section>
         </q-card>
@@ -638,4 +737,8 @@ export default {
   /* font-family: 'Sriracha', cursive; */
 
 /* }*/
+
+.custom-hover:hover {
+  color: #c30000;
+}
 </style>
