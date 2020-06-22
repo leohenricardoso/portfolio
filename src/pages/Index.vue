@@ -2,7 +2,7 @@
   <q-page>
     <div class="row justify-between shadow-10">
       <q-img
-        src="../assets/banner/bg10.jpg"
+        src="../assets/banner/bg7.jpg"
         style="height: 100vh"
       >
         <div class="row justify-center items-center full-width full-height text-center">
@@ -16,7 +16,7 @@
     </div>
   <!-- Skills -->
     <div id="skills" class="row justify-center q-pa-md q-gutter-lg q-mt-xl">
-      <div class="col-12 text-weight-bold text-h3 text-center">Skills</div>
+      <div class="col-12 text-weight-bold text-h3 text-center line-center">Skills</div>
     </div>
     <div class="row justify-center q-pa-md q-gutter-lg">
       <!-- Skill 1 -->
@@ -431,20 +431,96 @@
     </div>
     <q-separator class="q-my-xl" />
   <!-- Skills -->
+  <!-- Projects -->
+    <div class="row justify-center q-mb-lg">
+      <div class="col-12">
+        <div class="col-12 text-weight-bold text-h3 text-center line-center q-mb-md">Projetos</div>
+      </div>
+      <div class="col-12">
+        <div class="text-center text-h6 text-weight-light">
+          Alguns de meus projetos não podem ser compartilhados publicamente por se tratarem de sistemas internos.
+        </div>
+      </div>
+    </div>
+    <div class="row justify-center q-gutter-md">
+      <!-- Calendar -->
+      <div class="col-12 col-md-3">
+        <q-card class="my-card shadow-9">
+          <q-img
+            src="../assets/projects/calendar.png"
+            basic
+            class="cld-card-size"
+            @mouseover="projects.calendar.showButtomProject = true" @mouseleave="projects.calendar.showButtomProject = false"
+          >
+            <div v-show="projects.calendar.showButtomProject" class="full-width full-height">
+              <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center" @click="projects.calendar.displayDialog = true"/>
+            </div>
+          </q-img>
+        </q-card>
+      </div>
+      <!-- Golsat -->
+      <div class="col-12 col-md-3">
+        <q-card class="my-card shadow-9">
+          <q-img
+            src="../assets/projects/golsat.png"
+            basic
+            class="cld-card-size"
+            @mouseover="projects.golsat.showButtomProject = true" @mouseleave="projects.golsat.showButtomProject = false"
+          >
+            <div v-show="projects.golsat.showButtomProject" class="full-width full-height">
+              <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center" @click="projects.golsat.displayDialog = true"/>
+            </div>
+          </q-img>
+        </q-card>
+      </div>
+      <!-- Guinchos Calixto -->
+      <div class="col-12 col-md-3">
+        <q-card class="my-card shadow-9">
+          <q-img
+            src="../assets/projects/guincho-calixto.png"
+            basic
+            class="cld-card-size"
+            @mouseover="projects.guinchosCalixto.showButtomProject = true" @mouseleave="projects.guinchosCalixto.showButtomProject = false"
+          >
+            <div v-show="projects.guinchosCalixto.showButtomProject" class="full-width full-height">
+              <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center" @click="projects.guinchosCalixto.displayDialog = true"/>
+            </div>
+          </q-img>
+        </q-card>
+      </div>
+      <!-- Transportes Calixto -->
+      <div class="col-12 col-md-3">
+        <q-card class="my-card shadow-9">
+          <q-img
+            src="../assets/projects/transcalixto.png"
+            basic
+            class="cld-card-size shadow-9"
+            @mouseover="projects.transCalixto.showButtomProject = true" @mouseleave="projects.transCalixto.showButtomProject = false"
+          >
+            <div v-show="projects.transCalixto.showButtomProject" class="full-width full-height">
+              <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center" @click="projects.transCalixto.displayDialog = true"/>
+            </div>
+          </q-img>
+        </q-card>
+      </div>
+    </div>
+    <q-separator class="q-my-xl" />
+  <!-- Projects -->
   <!-- Resume -->
     <div class="row justify-center q-mt-xl">
       <div class="col-12">
-        <div class="text-center text-h3 text-weight-bold">
+        <div class="text-center text-h3 text-weight-bold line-center q-mb-md">
           Resumo
         </div>
       </div>
       <div class="col-12">
         <div class="text-center text-h6 text-weight-light">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit exercitationem accusamus amet?
+          Conheça um pouco da minha trajetória profissional e acadêmica.
         </div>
       </div>
     </div>
-    <div class="row justify-center q-mt-xl">
+    <div class="row justify-center q-mt-xl q-gutter-xl">
+    <!-- #region profissional xp -->
       <div class="col-12 col-md-5">
         <div class="row justify-center items-center">
           <div class="col-12">
@@ -459,6 +535,7 @@
             vertical
             color="primary"
             animated
+            class="shadow-0"
           >
             <q-step
               :name="1"
@@ -570,12 +647,120 @@
           </q-stepper>
         </div>
       </div>
+    <!-- #endregion profissional xp -->
+    <!-- #region graduation -->
+      <div class="col-12 col-md-5">
+        <div class="row justify-center items-center">
+          <div class="col-12">
+            <div class="text-h4 text-weight-medium">
+              <q-icon name="fas fa-graduation-cap" color="primary"/> Formação Acadêmica
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <q-stepper
+            v-model="graduationStep"
+            vertical
+            color="primary"
+            animated
+            class="shadow-0"
+          >
+            <q-step
+              :name="1"
+              title="Análise e Desenvolvimento de Sistemas"
+              :done="graduationStep > 2"
+            >
+              <div class="text-subtitle2 text-weight-medium">Universidade Positivo - Londrina (Fev/2018 - Jul/2020)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                O tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa, implanta e mantém sistemas de informação, utilizando metodologias de gestão de projetos e de desenvolvimento de programas.
+              </div>
+              <q-separator></q-separator>
+              <q-stepper-navigation>
+                <q-btn @click="graduationStep = 2" color="primary" label="Próximo" />
+              </q-stepper-navigation>
+            </q-step>
+
+            <q-step
+              :name="2"
+              title="Vue JS - Guia Completo (Vue CLI, Vue Router, Vuex e GraphQL)"
+              :done="graduationStep > 2"
+            >
+              <div class="text-subtitle2 text-weight-medium">Plínio Naves - Udemy (Jan/2020 - Abr/2020)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                VueJS é um Framework JavaScript Progressivo (adotado incrementalmente) para a construção de interfaces do usuário.
+                Se tornou extremamente popular pela sua habilidade de mesclar simplicidade e performance!
+                Com uma curva de aprendizado muito baixa, Vue entrega ao desenvolvedor as ferramentas essenciais a qualquer projeto, seja ele de pequeno até grande porte a nível empresarial.
+              </div>
+              <q-separator></q-separator>
+              <q-stepper-navigation>
+                <q-btn @click="graduationStep = 3" color="primary" label="Próximo" />
+                <q-btn flat @click="graduationStep = 1" color="primary" label="Anterior" class="q-ml-sm" />
+              </q-stepper-navigation>
+            </q-step>
+
+            <q-step
+              :name="3"
+              title="Curso Web Moderno"
+              :done="graduationStep > 3"
+            >
+              <div class="text-subtitle2 text-weight-medium">Cod3r Cursos Online - Udemy (Dez/2019 - Fev/2020)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                Neste curso iremos abordar o desenvolvimento Web de ponta a ponta, para que você seja capaz de construir uma aplicação com as principais tecnologias do mercado. São 14 cursos dentro de um só. Você irá aprender Javascript, que é hoje a linguagem da atualidade, várias empresas estão migrando suas bases de PHP, Python e outras para terem suas bases completamente feitas em javascript. Também irá aprender Node, os últimos recursos de HTML e  CSS, Gulp, Webpack, jQuery, Bootstrap, React ( Tecnologia usada por umas das maiores empresas do mundo, o Facebook), Angular, Vue JS, ExpressJS, MySQL, MongoDB e Electron.
+              </div>
+              <q-separator></q-separator>
+              <q-stepper-navigation>
+                <q-btn @click="graduationStep = 4" color="primary" label="Próximo" />
+                <q-btn flat @click="graduationStep = 2" color="primary" label="Anterior" class="q-ml-sm" />
+              </q-stepper-navigation>
+            </q-step>
+
+            <q-step
+              :name="4"
+              title="Jogos 3D com Unity"
+              :done="graduationStep > 4"
+            >
+              <div class="text-subtitle2 text-weight-medium">Wiliam Nascimento - Udemy (Jun/2018 - Nov/2018)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                Atualmente quando ouvimos falar em desenvolvimento de jogos certamente você já ouviu falar em Unity 3D.
+                E não é por acaso que ela é sempre citada quando se fala nesse assunto, segundo o site de notícias de tecnologia The Next Web, a engine domina 45% do mercado global de games.
+                Essa enorme popularidade faz jus ao seu poder de criar gráficos incríveis e em alta performance, com a Unity é possível criar jogos em 2D ou 3D para diferentes plataformas.
+              </div>
+              <q-separator></q-separator>
+              <q-stepper-navigation>
+                <q-btn @click="graduationStep = 5" color="primary" label="Próximo" />
+                <q-btn flat @click="graduationStep = 3" color="primary" label="Anterior" class="q-ml-sm" />
+              </q-stepper-navigation>
+            </q-step>
+
+            <q-step
+              :name="5"
+              title="Programação de Games"
+            >
+              <div class="text-subtitle2 text-weight-medium">Microlins (Mar/2015 - Mar/2016)</div>
+              <q-separator></q-separator>
+              <div class="text-body1 q-mt-md">
+                Curso com o objetivo de iniciar conteúdos básicos para o desenvolvimento de games, onde o aluno aprenderá a trabalhar com imagens e terá contato com lógica de programação através do Flash.
+              </div>
+              <q-separator></q-separator>
+              <q-stepper-navigation>
+                <q-btn @click="graduationStep = 4" color="primary" label="Anterior" class="q-ml-sm" />
+              </q-stepper-navigation>
+            </q-step>
+          </q-stepper>
+        </div>
+      </div>
+    <!-- #endregion graduation -->
     </div>
+    <q-separator class="q-my-xl" />
   <!-- Resume -->
   <!-- Contato -->
     <div id="contact" class="row justify-center q-pa-md q-gutter-lg q-mt-xl">
       <div class="col-12">
-        <div class="text-center text-h3 text-weight-bold">
+        <div class="text-center text-h3 text-weight-bold line-center">
           Vamos trabalhar juntos!
         </div>
       </div>
@@ -642,10 +827,129 @@
       </div>
     </div>
   <!-- Contato -->
+  <!-- Dialogs -->
+    <q-dialog v-model="projects.calendar.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.calendar.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img
+              src="../assets/projects/calendar.png"
+              basic
+              class="cld-card-size shadow-9"
+            />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.calendar.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.calendar.siteLink" target="_blank"  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.golsat.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.golsat.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img
+              src="../assets/projects/golsat.png"
+              basic
+              class="cld-card-size shadow-9"
+            />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.golsat.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.golsat.siteLink" target="_blank"  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.guinchosCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.guinchosCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img
+              src="../assets/projects/guincho-calixto.png"
+              basic
+              class="cld-card-size shadow-9"
+            />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.guinchosCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.guinchosCalixto.siteLink" target="_blank"  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.transCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.transCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img
+              src="../assets/projects/transcalixto.png"
+              basic
+              class="cld-card-size shadow-9"
+            />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.transCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.transCalixto.siteLink" target="_blank"  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+  <!-- Dialogs -->
   </q-page>
 </template>
 
 <script>
+require('../css/style.css')
 import { scroll } from 'quasar'
 const { getScrollTarget, setScrollPosition } = scroll
 export default {
@@ -714,7 +1018,38 @@ export default {
           description: 'GraphQL é uma linguagem de consulta criada pelo Facebook em 2012 e lançada publicamente em 2015. É considerada uma alternativa para arquiteturas REST, além de oferecer um serviço runtime para rodar comandos e consumir uma API.'
         }
       },
-      step: 1
+      step: 1,
+      graduationStep: 1,
+      projects: {
+        calendar: {
+          name: 'Calendário de Londrina',
+          description: 'Sistema desenvolvido para o Instituto de Desenvolvimento de Londrina (CODEL). Sistema utilizado como TCC para o curso de Análise e Desenvolvimento de Sistemas na Universidade Positivo Londrina. Foi desenvolvido em Vue.js e Node.js',
+          showButtomProject: false,
+          siteLink: 'https://leohenrique.me/calendar',
+          displayDialog: false
+        },
+        golsat: {
+          name: 'Golsat',
+          description: 'Participei do desenvolvimento desse projeto na UP-ONE. Esse site foi criado utilizando a plataforma Wordpress, porém seu tema foi desenvolvido totalmente do zero, de acordo com as necessidades do cliente. As tecnologias utilizadas nesse projeto foram: HTML, CSS, JavaScript, PHP, Wordpress.',
+          showButtomProject: false,
+          siteLink: 'https://golsat.com.br/',
+          displayDialog: false
+        },
+        guinchosCalixto: {
+          name: 'Guinchos Calixto',
+          description: 'Participei do desenvolvimento desse projeto na UP-ONE. Esse site foi criado utilizando a plataforma Wordpress, porém seu tema foi customizado de acordo com as necessidades do cliente. As tecnologias utilizadas nesse projeto foram: HTML, CSS, JavaScript, PHP, Wordpress.',
+          showButtomProject: false,
+          siteLink: 'https://guinchocalixto.com.br/',
+          displayDialog: false
+        },
+        transCalixto: {
+          name: 'Transportes Calixto',
+          description: 'Participei do desenvolvimento desse projeto na UP-ONE. Esse site foi criado utilizando a plataforma Wordpress, porém seu tema foi customizado de acordo com as necessidades do cliente. As tecnologias utilizadas nesse projeto foram: HTML, CSS, JavaScript, PHP, Wordpress.',
+          showButtomProject: false,
+          siteLink: 'https://transcalixto.com.br/',
+          displayDialog: false
+        }
+      }
     }
   },
   methods: {
@@ -730,14 +1065,6 @@ export default {
 </script>
 
 <style>
-/* body {
-  /* font-family: 'Josefin Sans', sans-serif; */
-  /* font-family: 'Permanent Marker', cursive; */
-  /* font-family: 'Patrick Hand', cursive; */
-  /* font-family: 'Sriracha', cursive; */
-
-/* }*/
-
 .custom-hover:hover {
   color: #c30000;
 }
