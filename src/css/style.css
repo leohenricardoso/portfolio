@@ -26,3 +26,7 @@
   float: right;
   border-bottom-left-radius: 3px;
 }
+
+.bg-gray{
+  background-color: #cccccc7a;
+}
