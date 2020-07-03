@@ -1,832 +1,1557 @@
 <template>
-  <q-page class="desktop-only">
-    <div class="row justify-between shadow-10">
-      <q-img src="../assets/banner/bg7.jpg" style="height: 100vh">
-        <div class="row justify-center items-center full-width full-height text-center">
-          <div class="col-10">
-            <div class="text-uppercase text-overline text-weight-medium">Full stack Web Developer</div>
-            <div class="text-white text-h1 text-weight-bolder">Leonardo Henrique</div>
-            <q-btn outline rounded label="Sobre" class="q-px-xl q-mt-xl" @click="scrollToElement('skills')" />
-          </div>
-        </div>
-      </q-img>
-    </div>
-    <!-- Skills -->
-    <div class="q-py-xl">
-      <div id="skills" class="row justify-center q-pa-md q-gutter-lg">
-        <div class="col-12 text-weight-bold text-h3 text-center line-center">Skills</div>
-      </div>
-      <div class="row justify-center q-pa-md q-gutter-lg">
-        <!-- Skill 1 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.html.icon" class="custom-hover cursor-pointer"
-                  @click="skill.html.expanded = !skill.html.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.html.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn round class="custom-hover" flat dense
-                :icon="skill.html.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.html.expanded = !skill.html.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.html.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.html.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 2 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.css.icon" class="custom-hover cursor-pointer"
-                  @click="skill.css.expanded = !skill.css.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.css.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn round flat class="custom-hover" dense
-                :icon="skill.css.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.css.expanded = !skill.css.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.css.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.css.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 3 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.vue.icon" class="custom-hover cursor-pointer"
-                  @click="skill.vue.expanded = !skill.vue.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.vue.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.vue.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.vue.expanded = !skill.vue.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.vue.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.vue.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 4 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.node.icon" class="custom-hover cursor-pointer"
-                  @click="skill.node.expanded = !skill.node.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.node.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.node.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.node.expanded = !skill.node.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.node.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.node.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 5 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.javascript.icon" class="custom-hover cursor-pointer"
-                  @click="skill.javascript.expanded = !skill.javascript.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.javascript.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.javascript.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.javascript.expanded = !skill.javascript.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.javascript.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.javascript.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 6 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.php.icon" class="custom-hover cursor-pointer"
-                  @click="skill.php.expanded = !skill.php.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.php.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.php.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.php.expanded = !skill.php.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.php.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.php.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 7 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.mysql.icon" class="custom-hover cursor-pointer"
-                  @click="skill.mysql.expanded = !skill.mysql.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.mysql.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.mysql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.mysql.expanded = !skill.mysql.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.mysql.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.mysql.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 8 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.postgres.icon" class="custom-hover cursor-pointer"
-                  @click="skill.postgres.expanded = !skill.postgres.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.postgres.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.postgres.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.postgres.expanded = !skill.postgres.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.postgres.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.postgres.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 9 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.rest.icon" class="custom-hover cursor-pointer"
-                  @click="skill.rest.expanded = !skill.rest.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.rest.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.rest.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.rest.expanded = !skill.rest.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.rest.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.rest.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-
-        <!-- Skill 10 -->
-        <div class="col-12 col-md-2">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h1">
-                <q-icon :name="skill.graphql.icon" class="custom-hover cursor-pointer"
-                  @click="skill.graphql.expanded = !skill.graphql.expanded" />
-              </div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-h5">{{ skill.graphql.name }}</div>
-            </q-card-section>
-
-            <q-card-actions>
-              <q-space />
-              <q-btn class="custom-hover" round flat dense
-                :icon="skill.graphql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                @click="skill.graphql.expanded = !skill.graphql.expanded" />
-              <q-space />
-            </q-card-actions>
-
-            <q-slide-transition>
-              <div v-show="skill.graphql.expanded">
-                <q-separator />
-                <q-card-section class="text-subtitle1">
-                  {{ skill.graphql.description }}
-                </q-card-section>
-              </div>
-            </q-slide-transition>
-          </q-card>
-        </div>
-      </div>
-    </div>
-    <!-- Skills -->
-    <!-- Projects -->
-    <div class="bg-gray q-py-xl">
-      <div class="row justify-center q-mb-lg">
-        <div class="col-12">
-          <div class="col-12 text-weight-bold text-h3 text-center line-center q-mb-md">Projetos</div>
-        </div>
-        <div class="col-12">
-          <div class="text-center text-h6 text-weight-light">
-            Alguns de meus projetos não podem ser compartilhados publicamente por se tratarem de sistemas internos.
-          </div>
-        </div>
-      </div>
-      <div class="row justify-center q-gutter-md">
-        <!-- Calendar -->
-        <div class="col-12 col-md-3">
-          <q-card class="my-card shadow-9">
-            <q-img src="../assets/projects/calendar.png" basic class="cld-card-size"
-              @mouseover="projects.calendar.showButtomProject = true"
-              @mouseleave="projects.calendar.showButtomProject = false">
-              <div v-show="projects.calendar.showButtomProject" class="full-width full-height">
-                <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                  @click="projects.calendar.displayDialog = true" />
-              </div>
-            </q-img>
-          </q-card>
-        </div>
-        <!-- Golsat -->
-        <div class="col-12 col-md-3">
-          <q-card class="my-card shadow-9">
-            <q-img src="../assets/projects/golsat.png" basic class="cld-card-size"
-              @mouseover="projects.golsat.showButtomProject = true"
-              @mouseleave="projects.golsat.showButtomProject = false">
-              <div v-show="projects.golsat.showButtomProject" class="full-width full-height">
-                <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                  @click="projects.golsat.displayDialog = true" />
-              </div>
-            </q-img>
-          </q-card>
-        </div>
-        <!-- Guinchos Calixto -->
-        <div class="col-12 col-md-3">
-          <q-card class="my-card shadow-9">
-            <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size"
-              @mouseover="projects.guinchosCalixto.showButtomProject = true"
-              @mouseleave="projects.guinchosCalixto.showButtomProject = false">
-              <div v-show="projects.guinchosCalixto.showButtomProject" class="full-width full-height">
-                <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                  @click="projects.guinchosCalixto.displayDialog = true" />
-              </div>
-            </q-img>
-          </q-card>
-        </div>
-        <!-- Transportes Calixto -->
-        <div class="col-12 col-md-3">
-          <q-card class="my-card shadow-9">
-            <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9"
-              @mouseover="projects.transCalixto.showButtomProject = true"
-              @mouseleave="projects.transCalixto.showButtomProject = false">
-              <div v-show="projects.transCalixto.showButtomProject" class="full-width full-height">
-                <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                  @click="projects.transCalixto.displayDialog = true" />
-              </div>
-            </q-img>
-          </q-card>
-        </div>
-      </div>
-    </div>
-    <!-- Projects -->
-    <!-- Resume -->
-    <div class="q-py-xl">
-      <div class="row justify-center">
-        <div class="col-12">
-          <div class="text-center text-h3 text-weight-bold line-center q-mb-md">
-            Resumo
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="text-center text-h6 text-weight-light">
-            Conheça um pouco da minha trajetória profissional e acadêmica.
-          </div>
-        </div>
-      </div>
-      <div class="row justify-center q-mt-sm q-gutter-xl">
-        <!-- #region profissional xp -->
-        <div class="col-12 col-md-5">
-          <div class="row justify-center items-center q-mb-md">
-            <div class="col-12">
-              <div class="text-h4 text-weight-medium">
-                <q-icon name="fas fa-briefcase" color="primary" /> Experiência Profissional
-              </div>
+  <q-page>
+  <!-- DESKTOP -->
+    <div class="desktop-only">
+      <div class="row justify-between shadow-10">
+        <q-img src="../assets/banner/bg7.jpg" style="height: 100vh">
+          <div class="row justify-center items-center full-width full-height text-center">
+            <div class="col-10">
+              <div class="text-uppercase text-overline text-weight-medium">Full stack Web Developer</div>
+              <div class="text-white text-h1 text-weight-bolder">Leonardo Henrique</div>
+              <q-btn outline rounded label="Sobre" class="q-px-xl q-mt-xl" @click="scrollToElement('skills')" />
             </div>
           </div>
-          <div class="row">
-            <q-stepper v-model="step" vertical color="primary" animated class="shadow-0">
-              <q-step :name="1" title="Desenvolvedor Back-End" :done="step > 2">
-                <div class="text-subtitle2 text-weight-medium">Bis2bis E-commerce (Nov/2019 - Atual)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Responsável pelo desenvolvimento de módulos back-end e/ou focados no painel administrativo do Magento
-                  2.
-                  Em nosso time de desenvolvimento de módulos para Magento 2, utilizamos metodologia Ágil (Scrum).
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  <b>Tecnologias: </b> PHP, HTML, JavaScript, XML, Magento 2
-                </div>
-                <q-stepper-navigation>
-                  <q-btn @click="step = 2" color="primary" label="Experiência anterior" />
-                </q-stepper-navigation>
-              </q-step>
-
-              <q-step :name="2" title="Desenvolvedor Full Stack" :done="step > 2">
-                <div class="text-subtitle2 text-weight-medium">Projetos Freelancer (Jan/2020 - Atual)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Responsável pelo desenvolvimento sites e sistemas Web de diferentes tipos e finalidades com o foco
-                  no desempenho e na experiência do usuário. Desenvolvimento escalável com a utilização de APIs para
-                  integrações e utilização de padrões de projetos conhecidos, como o MVC.
-                  Grande parte dos projetos foram desenvolvidos utilizando frameworks atuais de
-                  JavaScript: Vue.js (front-end) e Node.js (back-end).
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  <b>Tecnologias: </b> Vue.js, Node.js, Quasar.js, Adonis.js, MySQL, PostgreSQL, Rest API
-                </div>
-                <q-stepper-navigation>
-                  <q-btn @click="step = 3" color="primary" label="Experiência anterior" />
-                  <q-btn flat @click="step = 1" color="primary" label="Experiência posterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
-
-              <q-step :name="3" title="Desenvolvedor Full Stack" :done="step > 3">
-                <div class="text-subtitle2 text-weight-medium">Veronline - Tecnologia em Wifi (Fev/2019 - Nov/2019)
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Responsável pela manutenção e implementação de novas ferramentas em sistemas Web internos,
-                  auxílio no desenvolvimento de softwares para roteadores móveis da mikrotik e
-                  configuração de roteadores móveis.
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP, RouterOS Script (Mikrotik)
-                </div>
-                <q-stepper-navigation>
-                  <q-btn @click="step = 4" color="primary" label="Experiência anterior" />
-                  <q-btn flat @click="step = 2" color="primary" label="Experiência posterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
-
-              <q-step :name="4" title="Desenvolvedor Full Stack" :done="step > 4">
-                <div class="text-subtitle2 text-weight-medium">Instituto de Desenvolvimento de Londrina - CODEL
-                  (Nov/2018 - Out/2019)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Projeto remoto para o Instituto de Desenvolvimento de Londrina - CODEL, no
-                  qual fui responsável pela elaboração e desenvolvimento do sistema Web Calendário Londrina.
-                  Esse sistema tem por objetivo centralizar as informações de eventos que ocorrem na
-                  cidade de Londrina, podendo atrair investidores na área de turismo, divulgação de
-                  eventos e possibilitando a solicitação de auxílio no planejamento de um evento para a cidade.
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  <b>Tecnologias: </b> HTML, CSS, JavaScript, Bootstrap 4, PHP, MySQL
-                </div>
-                <q-stepper-navigation>
-                  <q-btn @click="step = 5" color="primary" label="Experiência anterior" />
-                  <q-btn flat @click="step = 3" color="primary" label="Experiência posterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
-
-              <q-step :name="5" title="Estagiário de Desenvolvimento Web">
-                <div class="text-subtitle2 text-weight-medium">UP-ONE Soluções Inteligentes (Jun/2018 - Nov/2018)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Responsável pelo desenvolvimento Web de sites institucionais, desenvolvimento de temas e configuração
-                  de sites Wordpress.
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP
-                </div>
-                <q-stepper-navigation>
-                  <q-btn @click="step = 4" color="primary" label="Experiência posterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
-            </q-stepper>
-          </div>
+        </q-img>
+      </div>
+      <!-- Skills -->
+      <div class="q-py-xl">
+        <div id="skills" class="row justify-center q-pa-md q-gutter-lg">
+          <div class="col-12 text-weight-bold text-h3 text-center line-center">Skills</div>
         </div>
-        <!-- #endregion profissional xp -->
-        <!-- #region graduation -->
-        <div class="col-12 col-md-5">
-          <div class="row justify-center items-center q-mb-md">
-            <div class="col-12">
-              <div class="text-h4 text-weight-medium">
-                <q-icon name="fas fa-graduation-cap" color="primary" /> Formação Acadêmica
-              </div>
+        <div class="row justify-center q-pa-md q-gutter-lg">
+          <!-- Skill 1 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.html.icon" class="custom-hover cursor-pointer"
+                      @click="skill.html.expanded = !skill.html.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.html.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn round class="custom-hover" flat dense
+                    :icon="skill.html.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.html.expanded = !skill.html.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.html.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.html.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
             </div>
           </div>
-          <div class="row">
-            <q-stepper v-model="graduationStep" vertical color="primary" animated class="shadow-0">
-              <q-step :name="1" title="Análise e Desenvolvimento de Sistemas" :done="graduationStep > 2">
-                <div class="text-subtitle2 text-weight-medium">Universidade Positivo - Londrina (Fev/2018 - Jul/2020)
-                </div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  O tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa,
-                  implanta e mantém sistemas de informação, utilizando metodologias de gestão de projetos e de
-                  desenvolvimento de programas.
-                </div>
-                <q-separator></q-separator>
-                <q-stepper-navigation>
-                  <q-btn @click="graduationStep = 2" color="primary" label="Próximo" />
-                </q-stepper-navigation>
-              </q-step>
 
-              <q-step :name="2" title="Vue JS - Guia Completo (Vue CLI, Vue Router, Vuex e GraphQL)"
-                :done="graduationStep > 2">
-                <div class="text-subtitle2 text-weight-medium">Plínio Naves - Udemy (Jan/2020 - Abr/2020)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  VueJS é um Framework JavaScript Progressivo (adotado incrementalmente) para a construção de interfaces
-                  do usuário.
-                  Se tornou extremamente popular pela sua habilidade de mesclar simplicidade e performance!
-                  Com uma curva de aprendizado muito baixa, Vue entrega ao desenvolvedor as ferramentas essenciais a
-                  qualquer projeto, seja ele de pequeno até grande porte a nível empresarial.
-                </div>
-                <q-separator></q-separator>
-                <q-stepper-navigation>
-                  <q-btn @click="graduationStep = 3" color="primary" label="Próximo" />
-                  <q-btn flat @click="graduationStep = 1" color="primary" label="Anterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
+          <!-- Skill 2 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.css.icon" class="custom-hover cursor-pointer"
+                      @click="skill.css.expanded = !skill.css.expanded" />
+                  </div>
+                </q-card-section>
 
-              <q-step :name="3" title="Curso Web Moderno" :done="graduationStep > 3">
-                <div class="text-subtitle2 text-weight-medium">Cod3r Cursos Online - Udemy (Dez/2019 - Fev/2020)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Neste curso iremos abordar o desenvolvimento Web de ponta a ponta, para que você seja capaz de
-                  construir uma aplicação com as principais tecnologias do mercado. São 14 cursos dentro de um só. Você
-                  irá aprender Javascript, que é hoje a linguagem da atualidade, várias empresas estão migrando suas
-                  bases de PHP, Python e outras para terem suas bases completamente feitas em javascript. Também irá
-                  aprender Node, os últimos recursos de HTML e CSS, Gulp, Webpack, jQuery, Bootstrap, React ( Tecnologia
-                  usada por umas das maiores empresas do mundo, o Facebook), Angular, Vue JS, ExpressJS, MySQL, MongoDB
-                  e Electron.
-                </div>
-                <q-separator></q-separator>
-                <q-stepper-navigation>
-                  <q-btn @click="graduationStep = 4" color="primary" label="Próximo" />
-                  <q-btn flat @click="graduationStep = 2" color="primary" label="Anterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.css.name }}</div>
+                </q-card-section>
 
-              <q-step :name="4" title="Jogos 3D com Unity" :done="graduationStep > 4">
-                <div class="text-subtitle2 text-weight-medium">Wiliam Nascimento - Udemy (Jun/2018 - Nov/2018)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Atualmente quando ouvimos falar em desenvolvimento de jogos certamente você já ouviu falar em Unity
-                  3D.
-                  E não é por acaso que ela é sempre citada quando se fala nesse assunto, segundo o site de notícias de
-                  tecnologia The Next Web, a engine domina 45% do mercado global de games.
-                  Essa enorme popularidade faz jus ao seu poder de criar gráficos incríveis e em alta performance, com a
-                  Unity é possível criar jogos em 2D ou 3D para diferentes plataformas.
-                </div>
-                <q-separator></q-separator>
-                <q-stepper-navigation>
-                  <q-btn @click="graduationStep = 5" color="primary" label="Próximo" />
-                  <q-btn flat @click="graduationStep = 3" color="primary" label="Anterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
+                <q-card-actions>
+                  <q-space />
+                  <q-btn round flat class="custom-hover" dense
+                    :icon="skill.css.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.css.expanded = !skill.css.expanded" />
+                  <q-space />
+                </q-card-actions>
 
-              <q-step :name="5" title="Programação de Games">
-                <div class="text-subtitle2 text-weight-medium">Microlins (Mar/2015 - Mar/2016)</div>
-                <q-separator></q-separator>
-                <div class="text-body1 q-mt-md">
-                  Curso com o objetivo de iniciar conteúdos básicos para o desenvolvimento de games, onde o aluno
-                  aprenderá a trabalhar com imagens e terá contato com lógica de programação através do Flash.
-                </div>
-                <q-separator></q-separator>
-                <q-stepper-navigation>
-                  <q-btn @click="graduationStep = 4" color="primary" label="Anterior" class="q-ml-sm" />
-                </q-stepper-navigation>
-              </q-step>
-            </q-stepper>
+                <q-slide-transition>
+                  <div v-show="skill.css.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.css.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 3 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.vue.icon" class="custom-hover cursor-pointer"
+                      @click="skill.vue.expanded = !skill.vue.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.vue.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.vue.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.vue.expanded = !skill.vue.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.vue.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.vue.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 4 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.node.icon" class="custom-hover cursor-pointer"
+                      @click="skill.node.expanded = !skill.node.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.node.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.node.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.node.expanded = !skill.node.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.node.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.node.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 5 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.javascript.icon" class="custom-hover cursor-pointer"
+                      @click="skill.javascript.expanded = !skill.javascript.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.javascript.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.javascript.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.javascript.expanded = !skill.javascript.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.javascript.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.javascript.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 6 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.php.icon" class="custom-hover cursor-pointer"
+                      @click="skill.php.expanded = !skill.php.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.php.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.php.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.php.expanded = !skill.php.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.php.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.php.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 7 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.mysql.icon" class="custom-hover cursor-pointer"
+                      @click="skill.mysql.expanded = !skill.mysql.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.mysql.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.mysql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.mysql.expanded = !skill.mysql.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.mysql.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.mysql.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 8 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.postgres.icon" class="custom-hover cursor-pointer"
+                      @click="skill.postgres.expanded = !skill.postgres.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.postgres.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.postgres.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.postgres.expanded = !skill.postgres.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.postgres.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.postgres.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 9 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.rest.icon" class="custom-hover cursor-pointer"
+                      @click="skill.rest.expanded = !skill.rest.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.rest.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.rest.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.rest.expanded = !skill.rest.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.rest.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.rest.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
+          </div>
+
+          <!-- Skill 10 -->
+          <div class="col-12 col-md-2">
+            <div class="shadow-3">
+              <q-card flat bordered class="my-card text-center">
+                <q-card-section>
+                  <div class="text-h1">
+                    <q-icon :name="skill.graphql.icon" class="custom-hover cursor-pointer"
+                      @click="skill.graphql.expanded = !skill.graphql.expanded" />
+                  </div>
+                </q-card-section>
+
+                <q-card-section class="q-pt-none">
+                  <div class="text-h5">{{ skill.graphql.name }}</div>
+                </q-card-section>
+
+                <q-card-actions>
+                  <q-space />
+                  <q-btn class="custom-hover" round flat dense
+                    :icon="skill.graphql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                    @click="skill.graphql.expanded = !skill.graphql.expanded" />
+                  <q-space />
+                </q-card-actions>
+
+                <q-slide-transition>
+                  <div v-show="skill.graphql.expanded">
+                    <q-separator />
+                    <q-card-section class="text-subtitle1">
+                      {{ skill.graphql.description }}
+                    </q-card-section>
+                  </div>
+                </q-slide-transition>
+              </q-card>
+            </div>
           </div>
         </div>
-        <!-- #endregion graduation -->
       </div>
-    </div>
-    <!-- Resume -->
-    <!-- Contato -->
-    <div class="q-py-xl bg-gray">
-      <div id="contact" class="row justify-center q-pa-md q-gutter-lg">
-        <div class="col-12">
-          <div class="text-center text-h3 text-weight-bold line-center">
-            Vamos trabalhar juntos!
+      <!-- Skills -->
+      <!-- Projects -->
+      <div class="bg-gray q-py-xl">
+        <div class="row justify-center q-mb-lg">
+          <div class="col-12">
+            <div class="col-12 text-weight-bold text-h3 text-center line-center q-mb-md">Projetos</div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Alguns de meus projetos não podem ser compartilhados publicamente por se tratarem de sistemas internos.
+            </div>
           </div>
         </div>
-        <div class="col-12">
-          <div class="text-center text-h6 text-weight-light">
-            Você pode entrar em contato comigo através de qualquer um desses canais.
+        <div class="row justify-center q-gutter-md">
+          <!-- Calendar -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/calendar.png" basic class="cld-card-size"
+                @mouseover="projects.calendar.showButtomProject = true"
+                @mouseleave="projects.calendar.showButtomProject = false">
+                <div v-show="projects.calendar.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.calendar.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Golsat -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/golsat.png" basic class="cld-card-size"
+                @mouseover="projects.golsat.showButtomProject = true"
+                @mouseleave="projects.golsat.showButtomProject = false">
+                <div v-show="projects.golsat.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.golsat.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Guinchos Calixto -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size"
+                @mouseover="projects.guinchosCalixto.showButtomProject = true"
+                @mouseleave="projects.guinchosCalixto.showButtomProject = false">
+                <div v-show="projects.guinchosCalixto.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.guinchosCalixto.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Transportes Calixto -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9"
+                @mouseover="projects.transCalixto.showButtomProject = true"
+                @mouseleave="projects.transCalixto.showButtomProject = false">
+                <div v-show="projects.transCalixto.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.transCalixto.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
           </div>
         </div>
-        <div class="col-12 col-md-2 shadow-9">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h3 q-mb-sm">
-                <q-icon name="far fa-envelope" />
+      </div>
+      <!-- Projects -->
+      <!-- Resume -->
+      <div class="q-py-xl">
+        <div class="row justify-center">
+          <div class="col-12">
+            <div class="text-center text-h3 text-weight-bold line-center q-mb-md">
+              Resumo
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Conheça um pouco da minha trajetória profissional e acadêmica.
+            </div>
+          </div>
+        </div>
+        <div class="row justify-center q-mt-sm q-gutter-xl">
+          <!-- #region profissional xp -->
+          <div class="col-12 col-md-5">
+            <div class="row justify-center items-center q-mb-md">
+              <div class="col-12">
+                <div class="text-h4 text-weight-medium">
+                  <q-icon name="fas fa-briefcase" color="primary" /> Experiência Profissional
+                </div>
               </div>
-              <div class="text-h5">E-mail</div>
-            </q-card-section>
+            </div>
+            <div class="row">
+              <q-stepper v-model="step" vertical color="primary" animated class="shadow-0">
+                <q-step :name="1" title="Desenvolvedor Back-End" :done="step > 2">
+                  <div class="text-subtitle2 text-weight-medium">Bis2bis E-commerce (Nov/2019 - Atual)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento de módulos back-end e/ou focados no painel administrativo do Magento
+                    2.
+                    Em nosso time de desenvolvimento de módulos para Magento 2, utilizamos metodologia Ágil (Scrum).
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> PHP, HTML, JavaScript, XML, Magento 2
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 2" color="primary" label="Experiência anterior" />
+                  </q-stepper-navigation>
+                </q-step>
 
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle2">contato@leohenrique.me</div>
-            </q-card-section>
+                <q-step :name="2" title="Desenvolvedor Full Stack" :done="step > 2">
+                  <div class="text-subtitle2 text-weight-medium">Projetos Freelancer (Jan/2020 - Atual)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento sites e sistemas Web de diferentes tipos e finalidades com o foco
+                    no desempenho e na experiência do usuário. Desenvolvimento escalável com a utilização de APIs para
+                    integrações e utilização de padrões de projetos conhecidos, como o MVC.
+                    Grande parte dos projetos foram desenvolvidos utilizando frameworks atuais de
+                    JavaScript: Vue.js (front-end) e Node.js (back-end).
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> Vue.js, Node.js, Quasar.js, Adonis.js, MySQL, PostgreSQL, Rest API
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 3" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 1" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
 
-            <q-card-section class="q-pt-none">
-              <a href="mailto:contato@leohenrique.me" target="_blank" rel="noopener noreferrer"
+                <q-step :name="3" title="Desenvolvedor Full Stack" :done="step > 3">
+                  <div class="text-subtitle2 text-weight-medium">Veronline - Tecnologia em Wifi (Fev/2019 - Nov/2019)
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pela manutenção e implementação de novas ferramentas em sistemas Web internos,
+                    auxílio no desenvolvimento de softwares para roteadores móveis da mikrotik e
+                    configuração de roteadores móveis.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP, RouterOS Script (Mikrotik)
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 4" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 2" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="4" title="Desenvolvedor Full Stack" :done="step > 4">
+                  <div class="text-subtitle2 text-weight-medium">Instituto de Desenvolvimento de Londrina - CODEL
+                    (Nov/2018 - Out/2019)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Projeto remoto para o Instituto de Desenvolvimento de Londrina - CODEL, no
+                    qual fui responsável pela elaboração e desenvolvimento do sistema Web Calendário Londrina.
+                    Esse sistema tem por objetivo centralizar as informações de eventos que ocorrem na
+                    cidade de Londrina, podendo atrair investidores na área de turismo, divulgação de
+                    eventos e possibilitando a solicitação de auxílio no planejamento de um evento para a cidade.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, Bootstrap 4, PHP, MySQL
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 5" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 3" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="5" title="Estagiário de Desenvolvimento Web">
+                  <div class="text-subtitle2 text-weight-medium">UP-ONE Soluções Inteligentes (Jun/2018 - Nov/2018)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento Web de sites institucionais, desenvolvimento de temas e configuração
+                    de sites Wordpress.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 4" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+              </q-stepper>
+            </div>
+          </div>
+          <!-- #endregion profissional xp -->
+          <!-- #region graduation -->
+          <div class="col-12 col-md-5">
+            <div class="row justify-center items-center q-mb-md">
+              <div class="col-12">
+                <div class="text-h4 text-weight-medium">
+                  <q-icon name="fas fa-graduation-cap" color="primary" /> Formação Acadêmica
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <q-stepper v-model="graduationStep" vertical color="primary" animated class="shadow-0">
+                <q-step :name="1" title="Análise e Desenvolvimento de Sistemas" :done="graduationStep > 2">
+                  <div class="text-subtitle2 text-weight-medium">Universidade Positivo - Londrina (Fev/2018 - Jul/2020)
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    O tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa,
+                    implanta e mantém sistemas de informação, utilizando metodologias de gestão de projetos e de
+                    desenvolvimento de programas.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 2" color="primary" label="Próximo" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="2" title="Vue JS - Guia Completo (Vue CLI, Vue Router, Vuex e GraphQL)"
+                  :done="graduationStep > 2">
+                  <div class="text-subtitle2 text-weight-medium">Plínio Naves - Udemy (Jan/2020 - Abr/2020)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    VueJS é um Framework JavaScript Progressivo (adotado incrementalmente) para a construção de interfaces
+                    do usuário.
+                    Se tornou extremamente popular pela sua habilidade de mesclar simplicidade e performance!
+                    Com uma curva de aprendizado muito baixa, Vue entrega ao desenvolvedor as ferramentas essenciais a
+                    qualquer projeto, seja ele de pequeno até grande porte a nível empresarial.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 3" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 1" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="3" title="Curso Web Moderno" :done="graduationStep > 3">
+                  <div class="text-subtitle2 text-weight-medium">Cod3r Cursos Online - Udemy (Dez/2019 - Fev/2020)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Neste curso iremos abordar o desenvolvimento Web de ponta a ponta, para que você seja capaz de
+                    construir uma aplicação com as principais tecnologias do mercado. São 14 cursos dentro de um só. Você
+                    irá aprender Javascript, que é hoje a linguagem da atualidade, várias empresas estão migrando suas
+                    bases de PHP, Python e outras para terem suas bases completamente feitas em javascript. Também irá
+                    aprender Node, os últimos recursos de HTML e CSS, Gulp, Webpack, jQuery, Bootstrap, React ( Tecnologia
+                    usada por umas das maiores empresas do mundo, o Facebook), Angular, Vue JS, ExpressJS, MySQL, MongoDB
+                    e Electron.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 4" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 2" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="4" title="Jogos 3D com Unity" :done="graduationStep > 4">
+                  <div class="text-subtitle2 text-weight-medium">Wiliam Nascimento - Udemy (Jun/2018 - Nov/2018)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Atualmente quando ouvimos falar em desenvolvimento de jogos certamente você já ouviu falar em Unity
+                    3D.
+                    E não é por acaso que ela é sempre citada quando se fala nesse assunto, segundo o site de notícias de
+                    tecnologia The Next Web, a engine domina 45% do mercado global de games.
+                    Essa enorme popularidade faz jus ao seu poder de criar gráficos incríveis e em alta performance, com a
+                    Unity é possível criar jogos em 2D ou 3D para diferentes plataformas.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 5" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 3" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="5" title="Programação de Games">
+                  <div class="text-subtitle2 text-weight-medium">Microlins (Mar/2015 - Mar/2016)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Curso com o objetivo de iniciar conteúdos básicos para o desenvolvimento de games, onde o aluno
+                    aprenderá a trabalhar com imagens e terá contato com lógica de programação através do Flash.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 4" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+              </q-stepper>
+            </div>
+          </div>
+          <!-- #endregion graduation -->
+        </div>
+      </div>
+      <!-- Resume -->
+      <!-- Contato -->
+      <div class="q-py-xl bg-gray">
+        <div id="contact" class="row justify-center q-pa-md q-gutter-lg">
+          <div class="col-12">
+            <div class="text-center text-h3 text-weight-bold line-center">
+              Vamos trabalhar juntos!
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Você pode entrar em contato comigo através de qualquer um desses canais.
+            </div>
+          </div>
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="far fa-envelope" />
+                </div>
+                <div class="text-h5">E-mail</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">contato@leohenrique.me</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="mailto:contato@leohenrique.me" target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="E-mail" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="fab fa-linkedin" />
+                </div>
+                <div class="text-h5">Linkedin</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">/leonardo-henrique</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="https://www.linkedin.com/in/leonardo-henrique-972837162" target="_blank"
+                  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="Acessar" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="fab fa-whatsapp" />
+                </div>
+                <div class="text-h5">WhatsApp</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">+55 (43) 9 9182-1340</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5543991821340" target="_blank"
+                  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="WhatsApp" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+      </div>
+      <!-- Contato -->
+      <!-- Dialogs -->
+      <q-dialog v-model="projects.calendar.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.calendar.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/calendar.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.calendar.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.calendar.siteLink" target="_blank" rel="noopener noreferrer"
                 style="text-decoration: none; color: #000;">
-                <q-btn outline rounded label="E-mail" class="q-px-lg custom-hover" />
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
               </a>
-            </q-card-section>
-          </q-card>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.golsat.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.golsat.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/golsat.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.golsat.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.golsat.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.guinchosCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.guinchosCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.guinchosCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.guinchosCalixto.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.transCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.transCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.transCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.transCalixto.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+    </div>
+  <!-- DESKTOP -->
+  <!-- MOBILE -->
+    <div class="mobile-only">
+      <div class="row justify-between shadow-10">
+        <q-img src="../assets/banner/bg7.jpg" style="height: 100vh">
+          <div class="row justify-center items-center full-width full-height text-center">
+            <div class="col-10">
+              <div class="text-uppercase text-overline text-weight-medium">Full stack Web Developer</div>
+              <div class="text-white text-h2 text-weight-bolder">Leonardo Henrique</div>
+              <q-btn outline rounded label="Sobre" class="q-px-xl q-mt-xl" @click="scrollToElement('skills')" />
+            </div>
+          </div>
+        </q-img>
+      </div>
+      <!-- Skills -->
+      <div class="q-py-xl">
+        <div id="skills" class="row justify-center q-pa-md q-gutter-lg">
+          <div class="col-12 text-weight-bold text-h3 text-center line-center">Skills</div>
         </div>
+        <q-carousel
+          v-model="skills.slide"
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          swipeable
+          animated
+          control-color="primary"
+          navigation
+          class="bg-grey-1 shadow-2 rounded-borders q-pb-xl"
+          style="height: auto"
+        >
+          <q-carousel-slide :name="1" class="column no-wrap">
+            <div class="row justify-center q-gutter-sm">
+              <!-- Skill 1 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.html.icon" class="custom-hover cursor-pointer"
+                          @click="skill.html.expanded = !skill.html.expanded" />
+                      </div>
+                    </q-card-section>
 
-        <div class="col-12 col-md-2 shadow-9">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h3 q-mb-sm">
-                <q-icon name="fab fa-linkedin" />
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.html.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
               </div>
-              <div class="text-h5">Linkedin</div>
-            </q-card-section>
+              <!-- Skill 2 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.css.icon" class="custom-hover cursor-pointer"
+                          @click="skill.css.expanded = !skill.css.expanded" />
+                      </div>
+                    </q-card-section>
 
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle2">/leonardo-henrique</div>
-            </q-card-section>
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.css.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide :name="3" class="column no-wrap">
+            <div class="row justify-center q-gutter-sm">
+              <!-- Skill 3 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.vue.icon" class="custom-hover cursor-pointer"
+                          @click="skill.vue.expanded = !skill.vue.expanded" />
+                      </div>
+                    </q-card-section>
 
-            <q-card-section class="q-pt-none">
-              <a href="https://www.linkedin.com/in/leonardo-henrique-972837162" target="_blank"
-                rel="noopener noreferrer" style="text-decoration: none; color: #000;">
-                <q-btn outline rounded label="Acessar" class="q-px-lg custom-hover" />
-              </a>
-            </q-card-section>
-          </q-card>
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.vue.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+              <!-- Skill 4 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.node.icon" class="custom-hover cursor-pointer"
+                          @click="skill.node.expanded = !skill.node.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.node.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+            </div>
+          </q-carousel-slide>
+
+          <q-carousel-slide :name="5" class="column no-wrap">
+            <div class="row justify-center q-gutter-sm">
+              <!-- Skill 5 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.javascript.icon" class="custom-hover cursor-pointer"
+                          @click="skill.javascript.expanded = !skill.javascript.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.javascript.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+              <!-- Skill 6 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.php.icon" class="custom-hover cursor-pointer"
+                          @click="skill.php.expanded = !skill.php.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.php.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+            </div>
+          </q-carousel-slide>
+
+          <q-carousel-slide :name="7" class="column no-wrap">
+            <div class="row justify-center q-gutter-sm">
+              <!-- Skill 7 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.mysql.icon" class="custom-hover cursor-pointer"
+                          @click="skill.mysql.expanded = !skill.mysql.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.mysql.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+              <!-- Skill 8 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.postgres.icon" class="custom-hover cursor-pointer"
+                          @click="skill.postgres.expanded = !skill.postgres.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.postgres.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+            </div>
+          </q-carousel-slide>
+
+          <q-carousel-slide :name="9" class="column no-wrap">
+            <div class="row justify-center q-gutter-sm">
+              <!-- Skill 9 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.rest.icon" class="custom-hover cursor-pointer"
+                          @click="skill.rest.expanded = !skill.rest.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.rest.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+              <!-- Skill 10 -->
+              <div class="col-5 col-md-2">
+                <div class="shadow-3">
+                  <q-card flat bordered class="my-card text-center">
+                    <q-card-section>
+                      <div class="text-h2">
+                        <q-icon :name="skill.graphql.icon" class="custom-hover cursor-pointer"
+                          @click="skill.graphql.expanded = !skill.graphql.expanded" />
+                      </div>
+                    </q-card-section>
+
+                    <q-card-section class="q-pt-none">
+                      <div class="text-subtitle1">{{ skill.graphql.name }}</div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </div>
+            </div>
+          </q-carousel-slide>
+        </q-carousel>
+      </div>
+      <!-- Skills -->
+      <!-- Projects -->
+      <div class="bg-gray q-py-xl">
+        <div class="row justify-center q-mb-lg">
+          <div class="col-12">
+            <div class="col-12 text-weight-bold text-h3 text-center line-center q-mb-md">Projetos</div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Alguns de meus projetos não podem ser compartilhados publicamente por se tratarem de sistemas internos.
+            </div>
+          </div>
         </div>
-
-        <div class="col-12 col-md-2 shadow-9">
-          <q-card flat bordered class="my-card text-center">
-            <q-card-section>
-              <div class="text-h3 q-mb-sm">
-                <q-icon name="fab fa-whatsapp" />
-              </div>
-              <div class="text-h5">WhatsApp</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <div class="text-subtitle2">+55 (43) 9 9182-1340</div>
-            </q-card-section>
-
-            <q-card-section class="q-pt-none">
-              <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5543991821340" target="_blank"
-                rel="noopener noreferrer" style="text-decoration: none; color: #000;">
-                <q-btn outline rounded label="WhatsApp" class="q-px-lg custom-hover" />
-              </a>
-            </q-card-section>
-          </q-card>
+        <div class="row justify-center q-gutter-md">
+          <!-- Calendar -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/calendar.png" basic class="cld-card-size"
+                @mouseover="projects.calendar.showButtomProject = true"
+                @mouseleave="projects.calendar.showButtomProject = false">
+                <div v-show="projects.calendar.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.calendar.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Golsat -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/golsat.png" basic class="cld-card-size"
+                @mouseover="projects.golsat.showButtomProject = true"
+                @mouseleave="projects.golsat.showButtomProject = false">
+                <div v-show="projects.golsat.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.golsat.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Guinchos Calixto -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size"
+                @mouseover="projects.guinchosCalixto.showButtomProject = true"
+                @mouseleave="projects.guinchosCalixto.showButtomProject = false">
+                <div v-show="projects.guinchosCalixto.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.guinchosCalixto.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
+          <!-- Transportes Calixto -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9"
+                @mouseover="projects.transCalixto.showButtomProject = true"
+                @mouseleave="projects.transCalixto.showButtomProject = false">
+                <div v-show="projects.transCalixto.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.transCalixto.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
         </div>
       </div>
+      <!-- Projects -->
+      <!-- Resume -->
+      <div class="q-py-xl">
+        <div class="row justify-center">
+          <div class="col-12">
+            <div class="text-center text-h3 text-weight-bold line-center q-mb-md">
+              Resumo
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Conheça um pouco da minha trajetória profissional e acadêmica.
+            </div>
+          </div>
+        </div>
+        <div class="row justify-center q-mt-sm q-gutter-xl">
+          <!-- #region profissional xp -->
+          <div class="col-12 col-md-5">
+            <div class="row justify-center items-center q-mb-md">
+              <div class="col-12">
+                <div class="text-h4 text-weight-medium">
+                  <q-icon name="fas fa-briefcase" color="primary" /> Experiência Profissional
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <q-stepper v-model="step" vertical color="primary" animated class="shadow-0">
+                <q-step :name="1" title="Desenvolvedor Back-End" :done="step > 2">
+                  <div class="text-subtitle2 text-weight-medium">Bis2bis E-commerce (Nov/2019 - Atual)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento de módulos back-end e/ou focados no painel administrativo do Magento
+                    2.
+                    Em nosso time de desenvolvimento de módulos para Magento 2, utilizamos metodologia Ágil (Scrum).
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> PHP, HTML, JavaScript, XML, Magento 2
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 2" color="primary" label="Experiência anterior" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="2" title="Desenvolvedor Full Stack" :done="step > 2">
+                  <div class="text-subtitle2 text-weight-medium">Projetos Freelancer (Jan/2020 - Atual)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento sites e sistemas Web de diferentes tipos e finalidades com o foco
+                    no desempenho e na experiência do usuário. Desenvolvimento escalável com a utilização de APIs para
+                    integrações e utilização de padrões de projetos conhecidos, como o MVC.
+                    Grande parte dos projetos foram desenvolvidos utilizando frameworks atuais de
+                    JavaScript: Vue.js (front-end) e Node.js (back-end).
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> Vue.js, Node.js, Quasar.js, Adonis.js, MySQL, PostgreSQL, Rest API
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 3" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 1" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="3" title="Desenvolvedor Full Stack" :done="step > 3">
+                  <div class="text-subtitle2 text-weight-medium">Veronline - Tecnologia em Wifi (Fev/2019 - Nov/2019)
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pela manutenção e implementação de novas ferramentas em sistemas Web internos,
+                    auxílio no desenvolvimento de softwares para roteadores móveis da mikrotik e
+                    configuração de roteadores móveis.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP, RouterOS Script (Mikrotik)
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 4" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 2" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="4" title="Desenvolvedor Full Stack" :done="step > 4">
+                  <div class="text-subtitle2 text-weight-medium">Instituto de Desenvolvimento de Londrina - CODEL
+                    (Nov/2018 - Out/2019)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Projeto remoto para o Instituto de Desenvolvimento de Londrina - CODEL, no
+                    qual fui responsável pela elaboração e desenvolvimento do sistema Web Calendário Londrina.
+                    Esse sistema tem por objetivo centralizar as informações de eventos que ocorrem na
+                    cidade de Londrina, podendo atrair investidores na área de turismo, divulgação de
+                    eventos e possibilitando a solicitação de auxílio no planejamento de um evento para a cidade.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, Bootstrap 4, PHP, MySQL
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 5" color="primary" label="Experiência anterior" />
+                    <q-btn flat @click="step = 3" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="5" title="Estagiário de Desenvolvimento Web">
+                  <div class="text-subtitle2 text-weight-medium">UP-ONE Soluções Inteligentes (Jun/2018 - Nov/2018)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Responsável pelo desenvolvimento Web de sites institucionais, desenvolvimento de temas e configuração
+                    de sites Wordpress.
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    <b>Tecnologias: </b> HTML, CSS, JavaScript, PHP
+                  </div>
+                  <q-stepper-navigation>
+                    <q-btn @click="step = 4" color="primary" label="Experiência posterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+              </q-stepper>
+            </div>
+          </div>
+          <!-- #endregion profissional xp -->
+          <!-- #region graduation -->
+          <div class="col-12 col-md-5">
+            <div class="row justify-center items-center q-mb-md">
+              <div class="col-12">
+                <div class="text-h4 text-weight-medium">
+                  <q-icon name="fas fa-graduation-cap" color="primary" /> Formação Acadêmica
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <q-stepper v-model="graduationStep" vertical color="primary" animated class="shadow-0">
+                <q-step :name="1" title="Análise e Desenvolvimento de Sistemas" :done="graduationStep > 2">
+                  <div class="text-subtitle2 text-weight-medium">Universidade Positivo - Londrina (Fev/2018 - Jul/2020)
+                  </div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    O tecnólogo em Análise e Desenvolvimento de Sistemas analisa, projeta, documenta, especifica, testa,
+                    implanta e mantém sistemas de informação, utilizando metodologias de gestão de projetos e de
+                    desenvolvimento de programas.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 2" color="primary" label="Próximo" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="2" title="Vue JS - Guia Completo (Vue CLI, Vue Router, Vuex e GraphQL)"
+                  :done="graduationStep > 2">
+                  <div class="text-subtitle2 text-weight-medium">Plínio Naves - Udemy (Jan/2020 - Abr/2020)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    VueJS é um Framework JavaScript Progressivo (adotado incrementalmente) para a construção de interfaces
+                    do usuário.
+                    Se tornou extremamente popular pela sua habilidade de mesclar simplicidade e performance!
+                    Com uma curva de aprendizado muito baixa, Vue entrega ao desenvolvedor as ferramentas essenciais a
+                    qualquer projeto, seja ele de pequeno até grande porte a nível empresarial.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 3" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 1" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="3" title="Curso Web Moderno" :done="graduationStep > 3">
+                  <div class="text-subtitle2 text-weight-medium">Cod3r Cursos Online - Udemy (Dez/2019 - Fev/2020)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Neste curso iremos abordar o desenvolvimento Web de ponta a ponta, para que você seja capaz de
+                    construir uma aplicação com as principais tecnologias do mercado. São 14 cursos dentro de um só. Você
+                    irá aprender Javascript, que é hoje a linguagem da atualidade, várias empresas estão migrando suas
+                    bases de PHP, Python e outras para terem suas bases completamente feitas em javascript. Também irá
+                    aprender Node, os últimos recursos de HTML e CSS, Gulp, Webpack, jQuery, Bootstrap, React ( Tecnologia
+                    usada por umas das maiores empresas do mundo, o Facebook), Angular, Vue JS, ExpressJS, MySQL, MongoDB
+                    e Electron.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 4" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 2" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="4" title="Jogos 3D com Unity" :done="graduationStep > 4">
+                  <div class="text-subtitle2 text-weight-medium">Wiliam Nascimento - Udemy (Jun/2018 - Nov/2018)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Atualmente quando ouvimos falar em desenvolvimento de jogos certamente você já ouviu falar em Unity
+                    3D.
+                    E não é por acaso que ela é sempre citada quando se fala nesse assunto, segundo o site de notícias de
+                    tecnologia The Next Web, a engine domina 45% do mercado global de games.
+                    Essa enorme popularidade faz jus ao seu poder de criar gráficos incríveis e em alta performance, com a
+                    Unity é possível criar jogos em 2D ou 3D para diferentes plataformas.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 5" color="primary" label="Próximo" />
+                    <q-btn flat @click="graduationStep = 3" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+
+                <q-step :name="5" title="Programação de Games">
+                  <div class="text-subtitle2 text-weight-medium">Microlins (Mar/2015 - Mar/2016)</div>
+                  <q-separator></q-separator>
+                  <div class="text-body1 q-mt-md">
+                    Curso com o objetivo de iniciar conteúdos básicos para o desenvolvimento de games, onde o aluno
+                    aprenderá a trabalhar com imagens e terá contato com lógica de programação através do Flash.
+                  </div>
+                  <q-separator></q-separator>
+                  <q-stepper-navigation>
+                    <q-btn @click="graduationStep = 4" color="primary" label="Anterior" class="q-ml-sm" />
+                  </q-stepper-navigation>
+                </q-step>
+              </q-stepper>
+            </div>
+          </div>
+          <!-- #endregion graduation -->
+        </div>
+      </div>
+      <!-- Resume -->
+      <!-- Contato -->
+      <div class="q-py-xl bg-gray">
+        <div id="contact" class="row justify-center q-pa-md q-gutter-lg">
+          <div class="col-12">
+            <div class="text-center text-h3 text-weight-bold line-center">
+              Vamos trabalhar juntos!
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="text-center text-h6 text-weight-light">
+              Você pode entrar em contato comigo através de qualquer um desses canais.
+            </div>
+          </div>
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="far fa-envelope" />
+                </div>
+                <div class="text-h5">E-mail</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">contato@leohenrique.me</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="mailto:contato@leohenrique.me" target="_blank" rel="noopener noreferrer"
+                  style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="E-mail" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="fab fa-linkedin" />
+                </div>
+                <div class="text-h5">Linkedin</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">/leonardo-henrique</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="https://www.linkedin.com/in/leonardo-henrique-972837162" target="_blank"
+                  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="Acessar" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+
+          <div class="col-12 col-md-2 shadow-9">
+            <q-card flat bordered class="my-card text-center">
+              <q-card-section>
+                <div class="text-h3 q-mb-sm">
+                  <q-icon name="fab fa-whatsapp" />
+                </div>
+                <div class="text-h5">WhatsApp</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <div class="text-subtitle2">+55 (43) 9 9182-1340</div>
+              </q-card-section>
+
+              <q-card-section class="q-pt-none">
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5543991821340" target="_blank"
+                  rel="noopener noreferrer" style="text-decoration: none; color: #000;">
+                  <q-btn outline rounded label="WhatsApp" class="q-px-lg custom-hover" />
+                </a>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+      </div>
+      <!-- Contato -->
+      <!-- Dialogs -->
+      <q-dialog v-model="projects.calendar.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.calendar.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/calendar.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.calendar.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.calendar.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.golsat.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.golsat.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/golsat.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.golsat.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.golsat.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.guinchosCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.guinchosCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.guinchosCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.guinchosCalixto.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
+      <q-dialog v-model="projects.transCalixto.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.transCalixto.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.transCalixto.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.transCalixto.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
     </div>
-    <!-- Contato -->
-    <!-- Dialogs -->
-    <q-dialog v-model="projects.calendar.displayDialog">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ projects.calendar.name }}</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-        <q-card-section class="row items-center q-pb-none">
-          <q-img src="../assets/projects/calendar.png" basic class="cld-card-size shadow-9" />
-        </q-card-section>
-        <q-card-section>
-          <div class="text-subtitle2 text-center">
-            {{ projects.calendar.description }}
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="row justify-center">
-            <a :href="projects.calendar.siteLink" target="_blank" rel="noopener noreferrer"
-              style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
-            </a>
-          </div>
-        </q-card-section>
-      </q-card>
-    </q-dialog>
-
-    <q-dialog v-model="projects.golsat.displayDialog">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ projects.golsat.name }}</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-        <q-card-section class="row items-center q-pb-none">
-          <q-img src="../assets/projects/golsat.png" basic class="cld-card-size shadow-9" />
-        </q-card-section>
-        <q-card-section>
-          <div class="text-subtitle2 text-center">
-            {{ projects.golsat.description }}
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="row justify-center">
-            <a :href="projects.golsat.siteLink" target="_blank" rel="noopener noreferrer"
-              style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
-            </a>
-          </div>
-        </q-card-section>
-      </q-card>
-    </q-dialog>
-
-    <q-dialog v-model="projects.guinchosCalixto.displayDialog">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ projects.guinchosCalixto.name }}</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-        <q-card-section class="row items-center q-pb-none">
-          <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size shadow-9" />
-        </q-card-section>
-        <q-card-section>
-          <div class="text-subtitle2 text-center">
-            {{ projects.guinchosCalixto.description }}
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="row justify-center">
-            <a :href="projects.guinchosCalixto.siteLink" target="_blank" rel="noopener noreferrer"
-              style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
-            </a>
-          </div>
-        </q-card-section>
-      </q-card>
-    </q-dialog>
-
-    <q-dialog v-model="projects.transCalixto.displayDialog">
-      <q-card>
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">{{ projects.transCalixto.name }}</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-        <q-card-section class="row items-center q-pb-none">
-          <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9" />
-        </q-card-section>
-        <q-card-section>
-          <div class="text-subtitle2 text-center">
-            {{ projects.transCalixto.description }}
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="row justify-center">
-            <a :href="projects.transCalixto.siteLink" target="_blank" rel="noopener noreferrer"
-              style="text-decoration: none; color: #000;">
-              <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
-            </a>
-          </div>
-        </q-card-section>
-      </q-card>
-    </q-dialog>
-
-    <!-- Dialogs -->
+  <!-- MOBILE -->
   </q-page>
+
 </template>
 
 <script>
@@ -837,6 +1562,9 @@ export default {
   name: 'PageIndex',
   data () {
     return {
+      skills: {
+        slide: 1
+      },
       skill: {
         html: {
           expanded: false,
