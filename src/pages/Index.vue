@@ -864,7 +864,7 @@
       <!-- Skills -->
       <div class="q-py-xl">
         <div id="skills" class="row justify-center q-pa-md q-gutter-lg">
-          <div class="col-12 text-weight-bold text-h3 text-center line-center">Skills</div>
+          <div class="col-12 text-weight-bold text-h4 text-center line-center">Skills</div>
         </div>
         <q-carousel
           v-model="skills.slide"
@@ -874,157 +874,148 @@
           animated
           control-color="primary"
           navigation
-          class="bg-grey-1 shadow-2 rounded-borders q-pb-xl"
+          arrows
+          class="rounded-borders q-pb-xl"
           style="height: auto"
         >
           <q-carousel-slide :name="1" class="column no-wrap">
             <div class="row justify-center q-gutter-sm">
               <!-- Skill 1 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.html.icon" class="custom-hover cursor-pointer"
                           @click="skill.html.expanded = !skill.html.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.html.name }}</div>
+                      <div class="text-subtitle2">{{ skill.html.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
               <!-- Skill 2 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.css.icon" class="custom-hover cursor-pointer"
                           @click="skill.css.expanded = !skill.css.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.css.name }}</div>
+                      <div class="text-subtitle2">{{ skill.css.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
-            </div>
-          </q-carousel-slide>
-          <q-carousel-slide :name="3" class="column no-wrap">
-            <div class="row justify-center q-gutter-sm">
               <!-- Skill 3 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.vue.icon" class="custom-hover cursor-pointer"
                           @click="skill.vue.expanded = !skill.vue.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.vue.name }}</div>
+                      <div class="text-subtitle2">{{ skill.vue.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
               <!-- Skill 4 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.node.icon" class="custom-hover cursor-pointer"
                           @click="skill.node.expanded = !skill.node.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.node.name }}</div>
+                      <div class="text-subtitle2">{{ skill.node.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
             </div>
           </q-carousel-slide>
-
-          <q-carousel-slide :name="5" class="column no-wrap">
+          <q-carousel-slide :name="2" class="column no-wrap">
             <div class="row justify-center q-gutter-sm">
               <!-- Skill 5 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.javascript.icon" class="custom-hover cursor-pointer"
                           @click="skill.javascript.expanded = !skill.javascript.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.javascript.name }}</div>
+                      <div class="text-subtitle2">{{ skill.javascript.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
               <!-- Skill 6 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.php.icon" class="custom-hover cursor-pointer"
                           @click="skill.php.expanded = !skill.php.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.php.name }}</div>
+                      <div class="text-subtitle2">{{ skill.php.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide :name="7" class="column no-wrap">
-            <div class="row justify-center q-gutter-sm">
               <!-- Skill 7 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.mysql.icon" class="custom-hover cursor-pointer"
                           @click="skill.mysql.expanded = !skill.mysql.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.mysql.name }}</div>
+                      <div class="text-subtitle2">{{ skill.mysql.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
               <!-- Skill 8 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.postgres.icon" class="custom-hover cursor-pointer"
                           @click="skill.postgres.expanded = !skill.postgres.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.postgres.name }}</div>
+                      <div class="text-subtitle2">{{ skill.postgres.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
@@ -1032,38 +1023,38 @@
             </div>
           </q-carousel-slide>
 
-          <q-carousel-slide :name="9" class="column no-wrap">
+          <q-carousel-slide :name="3" class="column no-wrap">
             <div class="row justify-center q-gutter-sm">
               <!-- Skill 9 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.rest.icon" class="custom-hover cursor-pointer"
                           @click="skill.rest.expanded = !skill.rest.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.rest.name }}</div>
+                      <div class="text-subtitle2">{{ skill.rest.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
               </div>
               <!-- Skill 10 -->
-              <div class="col-5 col-md-2">
+              <div class="col-4 col-md-2">
                 <div class="shadow-3">
                   <q-card flat bordered class="my-card text-center">
                     <q-card-section>
-                      <div class="text-h2">
+                      <div class="text-h3">
                         <q-icon :name="skill.graphql.icon" class="custom-hover cursor-pointer"
                           @click="skill.graphql.expanded = !skill.graphql.expanded" />
                       </div>
                     </q-card-section>
 
                     <q-card-section class="q-pt-none">
-                      <div class="text-subtitle1">{{ skill.graphql.name }}</div>
+                      <div class="text-subtitle2">{{ skill.graphql.name }}</div>
                     </q-card-section>
                   </q-card>
                 </div>
@@ -1077,79 +1068,102 @@
       <div class="bg-gray q-py-xl">
         <div class="row justify-center q-mb-lg">
           <div class="col-12">
-            <div class="col-12 text-weight-bold text-h3 text-center line-center q-mb-md">Projetos</div>
+            <div class="col-12 text-weight-bold text-h4 text-center line-center q-mb-md">Projetos</div>
           </div>
-          <div class="col-12">
+          <div class="col-10 col-md-12">
             <div class="text-center text-h6 text-weight-light">
               Alguns de meus projetos não podem ser compartilhados publicamente por se tratarem de sistemas internos.
             </div>
           </div>
         </div>
-        <div class="row justify-center q-gutter-md">
-          <!-- Calendar -->
-          <div class="col-12 col-md-3">
-            <q-card class="my-card shadow-9">
-              <q-img src="../assets/projects/calendar.png" basic class="cld-card-size"
-                @mouseover="projects.calendar.showButtomProject = true"
-                @mouseleave="projects.calendar.showButtomProject = false">
-                <div v-show="projects.calendar.showButtomProject" class="full-width full-height">
-                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                    @click="projects.calendar.displayDialog = true" />
-                </div>
-              </q-img>
-            </q-card>
-          </div>
-          <!-- Golsat -->
-          <div class="col-12 col-md-3">
-            <q-card class="my-card shadow-9">
-              <q-img src="../assets/projects/golsat.png" basic class="cld-card-size"
-                @mouseover="projects.golsat.showButtomProject = true"
-                @mouseleave="projects.golsat.showButtomProject = false">
-                <div v-show="projects.golsat.showButtomProject" class="full-width full-height">
-                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                    @click="projects.golsat.displayDialog = true" />
-                </div>
-              </q-img>
-            </q-card>
-          </div>
-          <!-- Guinchos Calixto -->
-          <div class="col-12 col-md-3">
-            <q-card class="my-card shadow-9">
-              <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size"
-                @mouseover="projects.guinchosCalixto.showButtomProject = true"
-                @mouseleave="projects.guinchosCalixto.showButtomProject = false">
-                <div v-show="projects.guinchosCalixto.showButtomProject" class="full-width full-height">
-                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                    @click="projects.guinchosCalixto.displayDialog = true" />
-                </div>
-              </q-img>
-            </q-card>
-          </div>
-          <!-- Transportes Calixto -->
-          <div class="col-12 col-md-3">
-            <q-card class="my-card shadow-9">
-              <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9"
-                @mouseover="projects.transCalixto.showButtomProject = true"
-                @mouseleave="projects.transCalixto.showButtomProject = false">
-                <div v-show="projects.transCalixto.showButtomProject" class="full-width full-height">
-                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
-                    @click="projects.transCalixto.displayDialog = true" />
-                </div>
-              </q-img>
-            </q-card>
-          </div>
-        </div>
+        <q-carousel
+          v-model="projectsCarousel.slide"
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          swipeable
+          animated
+          control-color="primary"
+          navigation
+          arrows
+          class="rounded-borders q-pb-xl bg-gray"
+          style="height: auto"
+        >
+          <q-carousel-slide :name="1" class="column no-wrap">
+            <div class="row justify-center q-gutter-md">
+              <!-- Calendar -->
+              <div class="col-9 col-md-3">
+                <q-card class="my-card shadow-9">
+                  <q-img src="../assets/projects/calendar.png" basic class="cld-card-size" />
+                  <q-card-section>
+                    <div class="full-width full-height row justify-center">
+                      <q-btn outline rounded label="Detalhes" class="q-px-xl"
+                        @click="projects.calendar.displayDialog = true" />
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide :name="2" class="column no-wrap">
+            <div class="row justify-center q-gutter-md">
+              <!-- Golsat -->
+              <div class="col-9 col-md-3">
+                <q-card class="my-card shadow-9">
+                  <q-img src="../assets/projects/golsat.png" basic class="cld-card-size" />
+                  <q-card-section>
+                    <div class="full-width full-height row justify-center">
+                      <q-btn outline rounded label="Detalhes" class="q-px-xl"
+                        @click="projects.golsat.displayDialog = true" />
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide :name="3" class="column no-wrap">
+            <div class="row justify-center q-gutter-md">
+              <!-- Guinchos Calixto -->
+              <div class="col-9 col-md-3">
+                <q-card class="my-card shadow-9">
+                  <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size" />
+                  <q-card-section>
+                    <div class="full-width full-height row justify-center">
+                      <q-btn outline rounded label="Detalhes" class="q-px-xl"
+                        @click="projects.guinchosCalixto.displayDialog = true" />
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-carousel-slide>
+          <q-carousel-slide :name="4" class="column no-wrap">
+            <div class="row justify-center q-gutter-md">
+              <!-- Transportes Calixto -->
+              <div class="col-9 col-md-3">
+                <q-card class="my-card shadow-9">
+                  <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9" />
+                  <q-card-section>
+                    <div class="full-width full-height row justify-center">
+                      <q-btn outline rounded label="Detalhes" class="q-px-xl"
+                        @click="projects.transCalixto.displayDialog = true" />
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-carousel-slide>
+        </q-carousel>
       </div>
       <!-- Projects -->
       <!-- Resume -->
       <div class="q-py-xl">
         <div class="row justify-center">
           <div class="col-12">
-            <div class="text-center text-h3 text-weight-bold line-center q-mb-md">
+            <div class="text-center text-h4 text-weight-bold line-center q-mb-md">
               Resumo
             </div>
           </div>
-          <div class="col-12">
+          <div class="col-10">
             <div class="text-center text-h6 text-weight-light">
               Conheça um pouco da minha trajetória profissional e acadêmica.
             </div>
@@ -1157,10 +1171,10 @@
         </div>
         <div class="row justify-center q-mt-sm q-gutter-xl">
           <!-- #region profissional xp -->
-          <div class="col-12 col-md-5">
+          <div class="col-10 col-md-5">
             <div class="row justify-center items-center q-mb-md">
-              <div class="col-12">
-                <div class="text-h4 text-weight-medium">
+              <div class="col-10">
+                <div class="text-h5 text-weight-medium">
                   <q-icon name="fas fa-briefcase" color="primary" /> Experiência Profissional
                 </div>
               </div>
@@ -1264,10 +1278,10 @@
           </div>
           <!-- #endregion profissional xp -->
           <!-- #region graduation -->
-          <div class="col-12 col-md-5">
+          <div class="col-10 col-md-5">
             <div class="row justify-center items-center q-mb-md">
-              <div class="col-12">
-                <div class="text-h4 text-weight-medium">
+              <div class="col-10">
+                <div class="text-h5 text-weight-medium">
                   <q-icon name="fas fa-graduation-cap" color="primary" /> Formação Acadêmica
                 </div>
               </div>
@@ -1367,7 +1381,7 @@
       <div class="q-py-xl bg-gray">
         <div id="contact" class="row justify-center q-pa-md q-gutter-lg">
           <div class="col-12">
-            <div class="text-center text-h3 text-weight-bold line-center">
+            <div class="text-center text-h4 text-weight-bold line-center">
               Vamos trabalhar juntos!
             </div>
           </div>
@@ -1376,7 +1390,7 @@
               Você pode entrar em contato comigo através de qualquer um desses canais.
             </div>
           </div>
-          <div class="col-12 col-md-2 shadow-9">
+          <div class="col-10 col-md-2 shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
@@ -1398,7 +1412,7 @@
             </q-card>
           </div>
 
-          <div class="col-12 col-md-2 shadow-9">
+          <div class="col-10 col-md-2 shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
@@ -1420,7 +1434,7 @@
             </q-card>
           </div>
 
-          <div class="col-12 col-md-2 shadow-9">
+          <div class="col-10 col-md-2 shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
@@ -1563,6 +1577,9 @@ export default {
   data () {
     return {
       skills: {
+        slide: 1
+      },
+      projectsCarousel: {
         slide: 1
       },
       skill: {
