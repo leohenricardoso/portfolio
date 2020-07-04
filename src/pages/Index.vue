@@ -856,14 +856,14 @@
             <div class="col-10">
               <div class="text-uppercase text-overline text-weight-medium">Full stack Web Developer</div>
               <div class="text-white text-h2 text-weight-bolder">Leonardo Henrique</div>
-              <q-btn outline rounded label="Sobre" class="q-px-xl q-mt-xl" @click="scrollToElement('skills')" />
+              <q-btn outline rounded label="Sobre" class="q-px-xl q-mt-xl" @click="scrollToElement('skills-mobile')" />
             </div>
           </div>
         </q-img>
       </div>
       <!-- Skills -->
       <div class="q-py-xl">
-        <div id="skills" class="row justify-center q-pa-md q-gutter-lg">
+        <div id="skills-mobile" class="row justify-center q-pa-md q-gutter-lg">
           <div class="col-12 text-weight-bold text-h4 text-center line-center">Skills</div>
         </div>
         <q-carousel
@@ -1091,7 +1091,7 @@
           <q-carousel-slide :name="1" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Calendar -->
-              <div class="col-9 col-md-3">
+              <div class="col-9 col-lg-3">
                 <q-card class="my-card shadow-9">
                   <q-img src="../assets/projects/calendar.png" basic class="cld-card-size" />
                   <q-card-section>
@@ -1107,7 +1107,7 @@
           <q-carousel-slide :name="2" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Golsat -->
-              <div class="col-9 col-md-3">
+              <div class="col-9 col-lg-3">
                 <q-card class="my-card shadow-9">
                   <q-img src="../assets/projects/golsat.png" basic class="cld-card-size" />
                   <q-card-section>
@@ -1123,7 +1123,7 @@
           <q-carousel-slide :name="3" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Guinchos Calixto -->
-              <div class="col-9 col-md-3">
+              <div class="col-9 col-lg-3">
                 <q-card class="my-card shadow-9">
                   <q-img src="../assets/projects/guincho-calixto.png" basic class="cld-card-size" />
                   <q-card-section>
@@ -1139,7 +1139,7 @@
           <q-carousel-slide :name="4" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Transportes Calixto -->
-              <div class="col-9 col-md-3">
+              <div class="col-9 col-lg-3">
                 <q-card class="my-card shadow-9">
                   <q-img src="../assets/projects/transcalixto.png" basic class="cld-card-size shadow-9" />
                   <q-card-section>
@@ -1390,7 +1390,7 @@
               Você pode entrar em contato comigo através de qualquer um desses canais.
             </div>
           </div>
-          <div class="col-10 col-md-2 shadow-9">
+          <div class="col-10 col-md-3 col-lg-2  shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
@@ -1412,7 +1412,7 @@
             </q-card>
           </div>
 
-          <div class="col-10 col-md-2 shadow-9">
+          <div class="col-10 col-md-3 col-lg-2 shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
@@ -1434,7 +1434,7 @@
             </q-card>
           </div>
 
-          <div class="col-10 col-md-2 shadow-9">
+          <div class="col-10 col-md-3 col-lg-2 shadow-9">
             <q-card flat bordered class="my-card text-center">
               <q-card-section>
                 <div class="text-h3 q-mb-sm">
