@@ -34,14 +34,6 @@
                   <div class="text-h5">{{ skill.html.name }}</div>
                 </q-card-section>
 
-                <q-card-actions>
-                  <q-space />
-                  <q-btn round class="custom-hover" flat dense
-                    :icon="skill.html.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.html.expanded = !skill.html.expanded" />
-                  <q-space />
-                </q-card-actions>
-
                 <q-slide-transition>
                   <div v-show="skill.html.expanded">
                     <q-separator />
@@ -68,14 +60,6 @@
                 <q-card-section class="q-pt-none">
                   <div class="text-h5">{{ skill.css.name }}</div>
                 </q-card-section>
-
-                <q-card-actions>
-                  <q-space />
-                  <q-btn round flat class="custom-hover" dense
-                    :icon="skill.css.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.css.expanded = !skill.css.expanded" />
-                  <q-space />
-                </q-card-actions>
 
                 <q-slide-transition>
                   <div v-show="skill.css.expanded">
@@ -104,14 +88,6 @@
                   <div class="text-h5">{{ skill.vue.name }}</div>
                 </q-card-section>
 
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.vue.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.vue.expanded = !skill.vue.expanded" />
-                  <q-space />
-                </q-card-actions>
-
                 <q-slide-transition>
                   <div v-show="skill.vue.expanded">
                     <q-separator />
@@ -138,14 +114,6 @@
                 <q-card-section class="q-pt-none">
                   <div class="text-h5">{{ skill.node.name }}</div>
                 </q-card-section>
-
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.node.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.node.expanded = !skill.node.expanded" />
-                  <q-space />
-                </q-card-actions>
 
                 <q-slide-transition>
                   <div v-show="skill.node.expanded">
@@ -174,14 +142,6 @@
                   <div class="text-h5">{{ skill.javascript.name }}</div>
                 </q-card-section>
 
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.javascript.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.javascript.expanded = !skill.javascript.expanded" />
-                  <q-space />
-                </q-card-actions>
-
                 <q-slide-transition>
                   <div v-show="skill.javascript.expanded">
                     <q-separator />
@@ -208,14 +168,6 @@
                 <q-card-section class="q-pt-none">
                   <div class="text-h5">{{ skill.php.name }}</div>
                 </q-card-section>
-
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.php.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.php.expanded = !skill.php.expanded" />
-                  <q-space />
-                </q-card-actions>
 
                 <q-slide-transition>
                   <div v-show="skill.php.expanded">
@@ -244,14 +196,6 @@
                   <div class="text-h5">{{ skill.mysql.name }}</div>
                 </q-card-section>
 
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.mysql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.mysql.expanded = !skill.mysql.expanded" />
-                  <q-space />
-                </q-card-actions>
-
                 <q-slide-transition>
                   <div v-show="skill.mysql.expanded">
                     <q-separator />
@@ -278,14 +222,6 @@
                 <q-card-section class="q-pt-none">
                   <div class="text-h5">{{ skill.postgres.name }}</div>
                 </q-card-section>
-
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.postgres.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.postgres.expanded = !skill.postgres.expanded" />
-                  <q-space />
-                </q-card-actions>
 
                 <q-slide-transition>
                   <div v-show="skill.postgres.expanded">
@@ -314,14 +250,6 @@
                   <div class="text-h5">{{ skill.rest.name }}</div>
                 </q-card-section>
 
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.rest.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.rest.expanded = !skill.rest.expanded" />
-                  <q-space />
-                </q-card-actions>
-
                 <q-slide-transition>
                   <div v-show="skill.rest.expanded">
                     <q-separator />
@@ -348,14 +276,6 @@
                 <q-card-section class="q-pt-none">
                   <div class="text-h5">{{ skill.graphql.name }}</div>
                 </q-card-section>
-
-                <q-card-actions>
-                  <q-space />
-                  <q-btn class="custom-hover" round flat dense
-                    :icon="skill.graphql.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                    @click="skill.graphql.expanded = !skill.graphql.expanded" />
-                  <q-space />
-                </q-card-actions>
 
                 <q-slide-transition>
                   <div v-show="skill.graphql.expanded">
@@ -384,6 +304,19 @@
           </div>
         </div>
         <div class="row justify-center q-gutter-md">
+          <!-- Acadêmico -->
+          <div class="col-12 col-md-3">
+            <q-card class="my-card shadow-9">
+              <q-img src="../assets/projects/academico.png" basic class="cld-card-size"
+                @mouseover="projects.academico.showButtomProject = true"
+                @mouseleave="projects.academico.showButtomProject = false">
+                <div v-show="projects.academico.showButtomProject" class="full-width full-height">
+                  <q-btn outline rounded label="Detalhes" class="q-px-xl absolute-center"
+                    @click="projects.academico.displayDialog = true" />
+                </div>
+              </q-img>
+            </q-card>
+          </div>
           <!-- Calendar -->
           <div class="col-12 col-md-3">
             <q-card class="my-card shadow-9">
@@ -743,6 +676,32 @@
       </div>
       <!-- Contato -->
       <!-- Dialogs -->
+      <q-dialog v-model="projects.academico.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.academico.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/academico.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.academico.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.academico.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
       <q-dialog v-model="projects.calendar.displayDialog">
         <q-card>
           <q-card-section class="row items-center q-pb-none">
@@ -1090,6 +1049,23 @@
         >
           <q-carousel-slide :name="1" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
+              <!-- Acadêmico -->
+              <div class="col-9 col-lg-3">
+                <q-card class="my-card shadow-9">
+                  <q-img src="../assets/projects/academico.png" basic class="cld-card-size" />
+                  <q-card-section>
+                    <div class="full-width full-height row justify-center">
+                      <q-btn outline rounded label="Detalhes" class="q-px-xl"
+                        @click="projects.academico.displayDialog = true" />
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-carousel-slide>
+
+          <q-carousel-slide :name="2" class="column no-wrap">
+            <div class="row justify-center q-gutter-md">
               <!-- Calendar -->
               <div class="col-9 col-lg-3">
                 <q-card class="my-card shadow-9">
@@ -1104,7 +1080,7 @@
               </div>
             </div>
           </q-carousel-slide>
-          <q-carousel-slide :name="2" class="column no-wrap">
+          <q-carousel-slide :name="3" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Golsat -->
               <div class="col-9 col-lg-3">
@@ -1120,7 +1096,7 @@
               </div>
             </div>
           </q-carousel-slide>
-          <q-carousel-slide :name="3" class="column no-wrap">
+          <q-carousel-slide :name="4" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Guinchos Calixto -->
               <div class="col-9 col-lg-3">
@@ -1136,7 +1112,7 @@
               </div>
             </div>
           </q-carousel-slide>
-          <q-carousel-slide :name="4" class="column no-wrap">
+          <q-carousel-slide :name="5" class="column no-wrap">
             <div class="row justify-center q-gutter-md">
               <!-- Transportes Calixto -->
               <div class="col-9 col-lg-3">
@@ -1459,6 +1435,32 @@
       </div>
       <!-- Contato -->
       <!-- Dialogs -->
+      <q-dialog v-model="projects.academico.displayDialog">
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">{{ projects.academico.name }}</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+          <q-card-section class="row items-center q-pb-none">
+            <q-img src="../assets/projects/academico.png" basic class="cld-card-size shadow-9" />
+          </q-card-section>
+          <q-card-section>
+            <div class="text-subtitle2 text-center">
+              {{ projects.academico.description }}
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <div class="row justify-center">
+              <a :href="projects.academico.siteLink" target="_blank" rel="noopener noreferrer"
+                style="text-decoration: none; color: #000;">
+                <q-btn outline rounded label="Ver site" class="q-px-xl custom-hover" />
+              </a>
+            </div>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+
       <q-dialog v-model="projects.calendar.displayDialog">
         <q-card>
           <q-card-section class="row items-center q-pb-none">
@@ -1647,6 +1649,13 @@ export default {
       step: 1,
       graduationStep: 1,
       projects: {
+        academico: {
+          name: 'Acadêmico',
+          description: 'Sistema desenvolvido para o Acadêmico. Sistema voltado para venda de cursos para psicólogos que estão iniciando sua carreira e para psicólogos experiêntes que buscam novos conhecimentos. Foi desenvolvido em Vue.js e Node.js',
+          showButtomProject: false,
+          siteLink: 'https://ac-academico.com.br/',
+          displayDialog: false
+        },
         calendar: {
           name: 'Calendário de Londrina',
           description: 'Sistema desenvolvido para o Instituto de Desenvolvimento de Londrina (CODEL). Sistema utilizado como TCC para o curso de Análise e Desenvolvimento de Sistemas na Universidade Positivo Londrina. Foi desenvolvido em Vue.js e Node.js',
