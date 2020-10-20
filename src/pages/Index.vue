@@ -1660,7 +1660,7 @@ export default {
           name: 'Calendário de Londrina',
           description: 'Sistema desenvolvido para o Instituto de Desenvolvimento de Londrina (CODEL). Sistema utilizado como TCC para o curso de Análise e Desenvolvimento de Sistemas na Universidade Positivo Londrina. Foi desenvolvido em Vue.js e Node.js',
           showButtomProject: false,
-          siteLink: 'https://leohenrique.me/calendar',
+          siteLink: 'https://leohenrique.me/projects/calendar',
           displayDialog: false
         },
         golsat: {
