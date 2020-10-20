@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://leohenrique.me/precache-manifest.ac9ec1076fe30be1937a80af7e1dedc4.js"
+  "https://leohenrique.me/precache-manifest.d03edceae208cf576da86ce8b6b235fb.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "portfolio"});
